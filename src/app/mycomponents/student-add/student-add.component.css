@@ -1,0 +1,4 @@
+.item-hover:hover {
+  background-color: skyblue;
+  transition: 0.5s;
+}

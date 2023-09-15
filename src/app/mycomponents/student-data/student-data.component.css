@@ -1,0 +1,19 @@
+.center-actions {
+  text-align: center;
+}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinking {
+  animation: blink 1.5s infinite; /* Change 1s to the desired blink duration */
+}
+
+
+/* .ml{
+  margin-left: 60px;
+} */

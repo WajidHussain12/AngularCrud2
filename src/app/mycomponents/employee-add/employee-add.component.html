@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]='studentForm' (ngSubmit)="save()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input type="text" class="form-control" placeholder="Enter First Name" formControlName="fname">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input type="text" class="form-control" placeholder="Enter First Name" formControlName="lname">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Gender</label>
+      <input type="text" class="form-control" placeholder="Enter First Name" formControlName="gender">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Contact</label>
+      <input type="text" class="form-control" placeholder="Enter First Name" formControlName="contact">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Designation</label>
+      <input type="text" class="form-control" placeholder="Enter First Name" formControlName="dsg">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
