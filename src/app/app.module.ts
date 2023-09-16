@@ -19,6 +19,8 @@ import { CoverPageComponent } from './mycomponents/cover-page/cover-page.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentAddComponent } from './mycomponents/student-add/student-add.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

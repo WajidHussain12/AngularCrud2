@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { StudentService } from 'src/app/services/student/student.service';
-// import { DataTablesStatic} from 'datatables.net-dt'
 
 
 @Component({
@@ -11,7 +10,7 @@ import { StudentService } from 'src/app/services/student/student.service';
 })
 export class StudentAddComponent {
 
-  constructor(private stdform: FormBuilder, private data: StudentService) { }
+constructor(private stdform: FormBuilder, private data: StudentService) { }
 
 
 
@@ -43,7 +42,7 @@ export class StudentAddComponent {
     })
   }
 
-  
+
 
 
 }
