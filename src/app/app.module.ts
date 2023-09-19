@@ -18,6 +18,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { CoverPageComponent } from './mycomponents/cover-page/cover-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentAddComponent } from './mycomponents/student-add/student-add.component';
+import { StudentEditComponent } from './mycomponents/student-edit/student-edit.component';
+import { StudentViewComponent } from './mycomponents/student-view/student-view.component';
 
 
 
@@ -33,7 +35,9 @@ import { StudentAddComponent } from './mycomponents/student-add/student-add.comp
     EmployeeAddComponent,
     StudentAddComponent,
     UserAddComponent,
-    CoverPageComponent
+    CoverPageComponent,
+    StudentEditComponent,
+    StudentViewComponent
   ],
   imports: [
     BrowserModule,

@@ -9,10 +9,12 @@ import { DataTableDirective } from 'angular-datatables';
   templateUrl: './student-data.component.html',
   styleUrls: ['./student-data.component.css']
 })
+
 export class StudentDataComponent implements OnInit, AfterViewInit {
   @ViewChild(DataTableDirective, { static: false }) dtElement: DataTableDirective;
 
   constructor(private request: StudentService) { }
+
   ngOnInit(): void {
     console.log("I Am OninIt");
   }
@@ -68,17 +70,54 @@ export class StudentDataComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.table();
   }
+// deletion Method
 
-  deleteStudent(id: any) {
+  deleteid: any = "";
 
-    const userconfirm = window.confirm("Are you sure to Delete This Record");
-    if (userconfirm) {
+  deleteStudentId(id: any) {
+    this.deleteid = id
+    console.log(this.deleteid)
 
-      this.request.deletestudent(id).subscribe((res) => {
-        this.refreshDataTable();
-      });
-    }
   }
+
+  confirmdeleteStudent() {
+    this.deleteStudent(this.deleteid);
+    // this.deletevalues(this.deleteid)
+
+  }
+
+// this mehtod for record delete
+
+  deleteStudent(deleteid: any) {
+    // No need for the window.confirm check anymore
+    this.request.deletestudent(deleteid).subscribe((res) => {
+      this.refreshDataTable();
+      // console.log("hello")
+
+    });
+  }
+
+// this method for get deleted record id and name for Confirmation
+
+  deletevalues(id: any) {
+    this.request.getUpdateStudentData(id).subscribe(r => {
+      // console.log(r)
+      const data: any = r
+      const viewname = data['name'];
+      this.dviewname = viewname
+      const id = data['id'];
+      this.did = id
+      console.log(this.dviewname);
+      console.log("this is delete console")
+
+    })
+  }
+  dviewname: any
+  did: any
+
+
+// this method to control data table
+
 
   table() {
     this.dtoptions = {
@@ -102,4 +141,46 @@ export class StudentDataComponent implements OnInit, AfterViewInit {
       this.table();
     });
   }
+
+
+
+  name: any
+  lastname: any
+  email: any
+  Designation: any
+  contact: any
+  gender: any
+
+
+
+  viewstd(id: any) {
+    this.request.getUpdateStudentData(id).subscribe(r => {
+      console.log(r);
+
+      const data: any = r
+      const viewname = data['name'];
+      this.name = viewname
+      const lastname = data['lastname'];
+      this.lastname = lastname
+      const email = data['email'];
+      this.email = email
+      const Designation = data['Designation'];
+      this.Designation = Designation
+      const contact = data['contact'];
+      this.contact = contact
+      const gender = data['gender'];
+      this.gender = gender
+
+    })
+
+  }
+
+
+
+
+
+
+
+
+
 }

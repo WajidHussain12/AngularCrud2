@@ -7,6 +7,8 @@ import { StudentAddComponent } from './mycomponents/student-add/student-add.comp
 import { EmployeeAddComponent } from './mycomponents/employee-add/employee-add.component';
 import { UserAddComponent } from './mycomponents/user-add/user-add.component';
 import { CoverPageComponent } from './mycomponents/cover-page/cover-page.component';
+import { StudentEditComponent } from './mycomponents/student-edit/student-edit.component';
+import { StudentViewComponent } from './mycomponents/student-view/student-view.component';
 
 const routes: Routes = [
   { path: "", component: CoverPageComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: "addstudent", component: StudentAddComponent },
   { path: "addemployee", component: EmployeeAddComponent },
   { path: "adduser", component: UserAddComponent },
+  { path: "stdedit/:id", component: StudentEditComponent },
+  { path: "stdview/:id", component: StudentViewComponent },
 ];
 
 @NgModule({

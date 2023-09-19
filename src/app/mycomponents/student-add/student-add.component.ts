@@ -10,14 +10,14 @@ import { StudentService } from 'src/app/services/student/student.service';
 })
 export class StudentAddComponent {
 
-constructor(private stdform: FormBuilder, private data: StudentService) { }
+  constructor(private stdform: FormBuilder, private data: StudentService) { }
 
 
 
   studentForm = this.stdform.group({
     name: ['', Validators.required],
     lastname: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
+    email: ['', Validators.required],
     contact: ['', Validators.required],
     Designation: ['', Validators.required],
     gender: ['', Validators.required]
@@ -33,14 +33,24 @@ constructor(private stdform: FormBuilder, private data: StudentService) { }
     }
   }
 
+  add_success: boolean = false
 
   save() {
     this.data.saveStudentRecord(this.studentForm.value).subscribe((res) => {
       console.log(res)
       console.log(this.studentForm)
       this.studentForm.reset({})
+      this.add_success = true;
+      this.disappear_success_msg();
     })
   }
+
+  disappear_success_msg() {
+    setTimeout(() => {
+      this.add_success = false
+    }, 8000)
+  }
+
 
 
 

@@ -28,4 +28,11 @@ export class StudentService {
   deletestudent(id: any) {
     return this.request.delete(`${this.studentapi}/${id}`)
   }
+
+  getUpdateStudentData(id: any) {
+    return this.request.get(`${this.studentapi}/${id}`)
+  }
+  setUpdateStudentData(id: any, data: any) {
+    return this.request.put(`${this.studentapi}/${id}`, data)
+  }
 }
